@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Calcular IMC"
+             Padding="10"             
+             xmlns:converters="clr-namespace:CalcFreelancer.Converters"
+             x:Class="CalcFreelancer.ImcPage">
+
+    <ContentPage.Content>
+        <StackLayout>
+            
+                <Label Text="Peso (KG)" />
+                <Entry Placeholder="(KG)"
+                   Keyboard="Numeric"
+                    Text="{Binding Peso}" />
+
+                <Label Text="Altura (CM)" />
+                <Entry Placeholder="(CM)"
+                   Keyboard="Numeric"
+                    Text="{Binding Altura}" />
+
+                <Label FontSize="Large"
+                    Text="{Binding ImcCalculado, StringFormat='IMC: {0:0.00}'}"
+                     />
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Column="0"
+                            BackgroundColor="#cdcdcd"
+                            Text="Limpar"
+                            Command="{Binding LimparCommand}"/>
+                    <Button Grid.Column="1"
+                            Text="Gravar"
+                            TextColor="White"
+                            BackgroundColor="#6699ff"
+                            Command="{Binding GravarCommand}"/>
+                </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

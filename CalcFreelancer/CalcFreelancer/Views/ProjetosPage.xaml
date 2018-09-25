@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CalcFreelancer.ProjetosPage"
+             Title="Projetos">
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding Projetos}"
+                  IsPullToRefreshEnabled="True"
+                  RefreshCommand="{Binding AtualizarDadosCommand}"
+                  IsRefreshing="{Binding Atualizando}"
+                  HasUnevenRows="True"
+                  SelectedItem="{Binding Projeto}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="10">
+                            <Label Text="{Binding Nome, StringFormat='Nome {0}'}" 
+                                   FontSize="Medium" />
+                            <Label Text="{Binding ValorTotal,  StringFormat='Valor {0:C}'}"
+                                   FontSize="Small"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

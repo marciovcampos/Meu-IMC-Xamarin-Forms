@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Projeto"
+             Padding="10"             
+             xmlns:converters="clr-namespace:CalcFreelancer.Converters"
+             x:Class="CalcFreelancer.ProjetoPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:MoedaConverter x:Key="MoedaConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Nome do Projeto" />
+                <Entry Placeholder="Nome do projeto"
+                   Text="{Binding Nome}" />
+
+                <Label Text="Valor por hora" />
+                <Entry Placeholder="Valor por hora"
+                   Keyboard="Numeric"
+                    Text="{Binding ValorPorHora, Converter={StaticResource MoedaConverter}}" />
+
+                <Label Text="Horas por dia" />
+                <Entry Placeholder="Horas por dia"
+                   Keyboard="Numeric"
+                    Text="{Binding HorasPorDia}" />
+
+                <Label Text="Dias de duração do projeto" />
+                <Entry Placeholder="Dias de duração do projeto"
+                   Keyboard="Numeric"
+                    Text="{Binding DiasDuracaoProjeto}" />
+
+                <Label FontSize="Large"
+                    Text="{Binding ValorTotal, StringFormat='{0:C} / hora'}" />
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Column="0"
+                            BackgroundColor="#cdcdcd"
+                            Text="Limpar"
+                            Command="{Binding LimparCommand}"/>
+                    <Button Grid.Column="1"
+                            Text="Gravar"
+                            TextColor="White"
+                            BackgroundColor="#6699ff"
+                            Command="{Binding GravarCommand}"/>
+                </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
