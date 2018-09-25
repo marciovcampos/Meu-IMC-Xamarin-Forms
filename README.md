@@ -16,6 +16,6 @@ Este aplicativo foi desenvolvido para a disciplina de ARQUITERTURA PARA APLICAÇ
 
 ### Histórico
 
-<img src="https://github.com/marciovcampos/Meu-IMC-Xamarin-Forms/master/docs/tela_3.png">
+<img src="https://github.com/marciovcampos/Meu-IMC-Xamarin-Forms/blob/master/docs/tela_3.png"/>
 
 <img src="https://github.com/marciovcampos/Meu-IMC-Xamarin-Forms/blob/master/docs/tela_4.png"/>
