@@ -23,6 +23,9 @@
     <Compile Update="Views\ImcPage.xaml.cs">
       <DependentUpon>ImcPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\HistoricoPage.xaml.cs">
+      <DependentUpon>HistoricoPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
